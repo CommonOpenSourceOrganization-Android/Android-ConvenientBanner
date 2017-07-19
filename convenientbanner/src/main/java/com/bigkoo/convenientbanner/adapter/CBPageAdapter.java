@@ -17,7 +17,7 @@ import java.util.List;
 public class CBPageAdapter<T> extends PagerAdapter {
     protected List<T> mDatas;
     protected CBViewHolderCreator holderCreator;
-//    private View.OnClickListener onItemClickListener;
+    //    private View.OnClickListener onItemClickListener;
     private boolean canLoop = true;
     private CBLoopViewPager viewPager;
     private final int MULTIPLE_COUNT = 300;
@@ -32,7 +32,7 @@ public class CBPageAdapter<T> extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return canLoop ? getRealCount()*MULTIPLE_COUNT : getRealCount();
+        return canLoop ? getRealCount() * MULTIPLE_COUNT : getRealCount();
     }
 
     public int getRealCount() {
@@ -44,7 +44,7 @@ public class CBPageAdapter<T> extends PagerAdapter {
         int realPosition = toRealPosition(position);
 
         View view = getView(realPosition, null, container);
-//        if(onItemClickListener != null) view.setOnClickListener(onItemClickListener);
+        //        if(onItemClickListener != null) view.setOnClickListener(onItemClickListener);
         container.addView(view);
         return view;
     }
@@ -65,7 +65,8 @@ public class CBPageAdapter<T> extends PagerAdapter {
         }
         try {
             viewPager.setCurrentItem(position, false);
-        }catch (IllegalStateException e){}
+        } catch (IllegalStateException e) {
+        }
     }
 
     @Override
@@ -96,11 +97,11 @@ public class CBPageAdapter<T> extends PagerAdapter {
             holder = (Holder<T>) view.getTag(R.id.cb_item_tag);
         }
         if (mDatas != null && !mDatas.isEmpty())
-            holder.UpdateUI(container.getContext(), position, mDatas.get(position));
+            holder.updateUI(container.getContext(), position, mDatas.get(position));
         return view;
     }
 
-//    public void setOnItemClickListener(View.OnClickListener onItemClickListener) {
-//        this.onItemClickListener = onItemClickListener;
-//    }
+    //    public void setOnItemClickListener(View.OnClickListener onItemClickListener) {
+    //        this.onItemClickListener = onItemClickListener;
+    //    }
 }

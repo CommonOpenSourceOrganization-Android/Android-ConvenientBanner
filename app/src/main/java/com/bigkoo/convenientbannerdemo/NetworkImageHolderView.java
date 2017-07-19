@@ -13,6 +13,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
  */
 public class NetworkImageHolderView implements Holder<String> {
     private ImageView imageView;
+
     @Override
     public View createView(Context context) {
         //你可以通过layout文件来创建，也可以像我一样用代码创建，不一定是Image，任何控件都可以进行翻页
@@ -22,8 +23,8 @@ public class NetworkImageHolderView implements Holder<String> {
     }
 
     @Override
-    public void UpdateUI(Context context,int position, String data) {
+    public void updateUI(Context context, int position, String data) {
         imageView.setImageResource(R.drawable.ic_default_adimage);
-        ImageLoader.getInstance().displayImage(data,imageView);
+        ImageLoader.getInstance().displayImage(data, imageView);
     }
 }
