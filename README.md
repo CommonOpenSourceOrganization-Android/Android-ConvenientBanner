@@ -14,7 +14,7 @@ ConvenientBanner
 
 demo是用Module方式依赖，你也可以使用gradle 依赖:
 ```java
-   compile 'com.bigkoo:convenientbanner:2.0.5'
+   com.github.CommonOpenSourceOrganization-Android:Android-ConvenientBanner:2.0.9
 ```
 
 
